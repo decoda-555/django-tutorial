@@ -82,7 +82,10 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 05c8d39644a8e0a2ef9bad2cab9a8b04199ba2a0
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.postgresql',
@@ -93,7 +96,10 @@ DATABASES = {
 #        'PORT': '5432',
 #    }
 #}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 05c8d39644a8e0a2ef9bad2cab9a8b04199ba2a0
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
