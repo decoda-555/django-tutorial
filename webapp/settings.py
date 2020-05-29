@@ -31,6 +31,7 @@ SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = [
+    'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -77,12 +78,6 @@ WSGI_APPLICATION = 'webapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#    }
-#}
 
 DATABASES = {
     'default': {
@@ -132,6 +127,11 @@ STATIC_URL = '/static/'
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'decoda555@gmail.com'
-EMAIL_HOST_PASSWORD = '*****'
+EMAIL_HOST_PASSWORD = 'Xz02y324'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
