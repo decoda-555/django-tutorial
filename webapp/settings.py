@@ -24,7 +24,7 @@ SECRET_KEY = '#4_l7lej7n5e(%q&s3oy*g&yc&+p^7cos@k!$%^=tn1#+n#^@i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['decoda-blog.com', 'localhost', '127.0.0.1']
 
 SITE_ID = 1
 
@@ -39,8 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
+    'social_django',
+    'django_extensions',
+    'images.apps.ImagesConfig',
     'taggit',
     'django.contrib.sites',
+    'easy_thumbnails',
     'django.contrib.sitemaps',
     'django.contrib.postgres',
 ]
@@ -127,11 +131,7 @@ STATIC_URL = '/static/'
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'decoda555@gmail.com'
-<<<<<<< HEAD
 EMAIL_HOST_PASSWORD = '***'
-=======
-EMAIL_HOST_PASSWORD = '****'
->>>>>>> 0d74a46cafc6cf58ac7666a4edb9e3b655082ffd
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
@@ -139,3 +139,13 @@ EMAIL_USE_TLS = True
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+]
+
+
