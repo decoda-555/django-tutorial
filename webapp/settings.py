@@ -127,7 +127,11 @@ STATIC_URL = '/static/'
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'decoda555@gmail.com'
+<<<<<<< HEAD
 EMAIL_HOST_PASSWORD = '***'
+=======
+EMAIL_HOST_PASSWORD = '****'
+>>>>>>> 0d74a46cafc6cf58ac7666a4edb9e3b655082ffd
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
