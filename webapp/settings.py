@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from django.urls import reverse_lazy
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,6 +28,11 @@ DEBUG = True
 ALLOWED_HOSTS = ['decoda-blog.com', 'localhost', '127.0.0.1']
 
 SITE_ID = 1
+
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: reverse_lazy('user_detail',
+                                        args=[u.username])
+}
 
 # Application definition
 
@@ -47,6 +53,7 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'django.contrib.sitemaps',
     'django.contrib.postgres',
+    'actions.apps.ActionsConfig',
 ]
 
 MIDDLEWARE = [
@@ -129,6 +136,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
+
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'decoda555@gmail.com'
 EMAIL_HOST_PASSWORD = '***'
@@ -149,3 +161,4 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 
+THUMBNAIL_DEBUG = True
