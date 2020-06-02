@@ -25,8 +25,6 @@ SECRET_KEY = '#4_l7lej7n5e(%q&s3oy*g&yc&+p^7cos@k!$%^=tn1#+n#^@i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['decoda-blog.com', 'localhost', '127.0.0.1']
-
 SITE_ID = 1
 
 ABSOLUTE_URL_OVERRIDES = {
