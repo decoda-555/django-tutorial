@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  web:
+    build: ./django-tutorial
+    command: python3 manage.py runserver_plus --cert-file cert.crt
+    volumes:
+      - ./django-tutorial/://home/xadm/Documents/django-on-docker/app/env/django-tutorial/
+    ports:
+      - 8000:8000
+db:
+    image: postgres:12.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=blog
+      - POSTGRES_PASSWORD=blog
+      - POSTGRES_DB=blog
+
+volumes:
+  postgres_data:
